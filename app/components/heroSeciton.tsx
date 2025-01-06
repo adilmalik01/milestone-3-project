@@ -5,17 +5,12 @@ import Image from 'next/image';
 const HeroSection = () => {
     return (
         <div className="relative overflow-hidden bg-white">
-            {/* Main Hero Container */}
             <div className="relative">
-                {/* Background Pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white z-0" />
 
-                {/* Content Container */}
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Content */}
                         <div className="space-y-8">
-                            {/* Sale Badge */}
                             <div className="inline-flex items-center rounded-full bg-blue-50 px-4 py-1">
                                 <span className="text-sm font-medium text-blue-600">
                                     New Season Sale
@@ -26,19 +21,16 @@ const HeroSection = () => {
                                 </span>
                             </div>
 
-                            {/* Main Heading */}
                             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
                                 Discover Your Style{' '}
                                 <span className="text-blue-600">This Season</span>
                             </h1>
 
-                            {/* Description */}
                             <p className="text-lg text-gray-600 max-w-xl">
                                 Explore our curated collection of premium fashion items. Find the perfect
                                 pieces to express your unique style with our latest arrivals.
                             </p>
 
-                            {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
                                     Shop Now
@@ -50,7 +42,6 @@ const HeroSection = () => {
                                 </button>
                             </div>
 
-                            {/* Trust Badges */}
                             <div className="flex items-center gap-8">
                                 <div className="flex items-center">
                                     <div className="rounded-full bg-green-100 p-2">
@@ -71,14 +62,12 @@ const HeroSection = () => {
                             </div>
                         </div>
 
-                        {/* Right Content - Hero Image */}
                         <div className="relative">
                             <div className=" flex justify-center items-star">
                                 <Image src="/image.png" width={600} height={600} alt="" />
 
                             </div>
 
-                            {/* Floating Card */}
                             <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 w-48">
                                 <div className="flex items-center justify-between">
                                     <div>

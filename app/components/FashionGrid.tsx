@@ -3,7 +3,7 @@ import React from 'react';
 
 const FashionGrid = () => {
     return (
-        <div className="min-h-[80vh] mx-auto w-[95%] bg-gray-50 p-6">
+        <div className="min-h-[80vh] mx-auto w-[95%]  p-6">
         <div className="grid grid-cols-4 gap-4 max-md:gap-5 max-md:px-2 max-md:place-items-center">
             <div className="col-span-2 relative">
                 <Image

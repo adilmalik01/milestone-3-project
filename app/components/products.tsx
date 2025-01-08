@@ -1,16 +1,17 @@
 "use client"
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function Main() {
 
-    let [products, setProducts] = useState([])
-
+    const [products, setProducts] = useState<{ id: number; thumbnail: string; title: string; brand: string; price: number }[]>([])
+ 
 
     const fetchAllProducts = async () => {
         try {
-            let response = await axios.get("https://dummyjson.com/products?limit=12");
+            const response: AxiosResponse<{ products: { id: number; thumbnail: string; title: string; brand: string; price: number }[] }> = await axios.get("https://dummyjson.com/products?limit=12");
             setProducts(response.data.products)
 
         } catch (error) {
@@ -61,26 +62,30 @@ export default function Main() {
             </div>
 
             <div className="w-full  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8 py-10">
-                {products.map((product: any, index: any) => (
-                    <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" key={index}>
-                        <div className="w-full h-64 relative">
-                            <Image
-                                src={product.thumbnail}
-                            width={300}
-                            height={400}
-                            alt="Fashion model"
-                            className="object-cover w-full h-full"
-                            />
-                        </div>
-                        <div className="w-full p-4">
-                            <span className="block text-lg font-semibold text-black mb-2">
-                                {product.title}
-                            </span>
-                            <div className="flex justify-between items-center text-sm">
-                                <span className="text-gray-500">{product.brand}</span>
-                                <span className="font-semibold text-black">${product.price}</span>
+                {products.map((product: {
+                    id: unknown; thumbnail: string; title: string; brand: string; price: number
+                }, index: number) => (
+                    <div className="flex hover:shadow-lg flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" key={index}>
+                        <Link href={`/product/${product.id}`}>
+                            <div className="w-full h-64 relative">
+                                <Image
+                                    src={product.thumbnail}
+                                    width={300}
+                                    height={400}
+                                    alt="Fashion model"
+                                    className="object-cover w-full h-full"
+                                />
                             </div>
-                        </div>
+                            <div className="w-full p-4">
+                                <span className="block text-lg font-semibold text-black mb-2">
+                                    {product.title}
+                                </span>
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-gray-500">{product.brand}</span>
+                                    <span className="font-semibold text-black">${product.price}</span>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </div>

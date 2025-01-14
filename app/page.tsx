@@ -4,6 +4,8 @@ import Image from "next/image";
 import FashionGrid from "./components/FashionGrid";
 import HeroSection from "./components/heroSeciton";
 import Main from "./components/products";
+import NewsletterSubscription from "./components/Newsletter";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +23,11 @@ export default function Home() {
       </div>
       <FashionGrid />
       <Main />
+      <div className="banner min-h-[70vh] my-5 w-full   bg-[url('/background.png')]  bg-center bg-cover ">
+
+      </div>
+      <NewsletterSubscription />
+      <Footer />
     </>
   );
 }

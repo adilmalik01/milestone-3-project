@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ProductDetails = (param: any) => {
+const ProductDetails = (param:any) => {
 
     console.log(param);
 
